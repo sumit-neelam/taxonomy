@@ -1,0 +1,54 @@
+created_by: Sumit_Neelam
+seed_examples:
+- answer: |
+    {'event_name':['Atlanta Summer Organ Festival'], 'number_of_tickets':['4'], 'date':['day after tomorrow'], 'city':['Atlanta']}
+  context: |
+    Slot library (slot id followed by description):
+    event_name: Name of match or artist for event.
+    number_of_tickets: Number of tickets to buy for event. Allowed values - "1", "2", "3", "4", "5", "6", "7", "8", "9".
+    date: Date of event.
+    city: City where the event is taking place.
+
+    Conversation:
+    Client: I am interested in finding dates for events.
+    Agent: Do you know the event you are interested in? Do you have a preference on the city in which I should look?
+    Client: I heard that Atlanta Summer Organ Festival is really fun. I am looking for events in 'ATL'.
+    Agent: The event is on the day after tomorrow. It is the Atlanta Summer Organ Festival and it is at Peachtree Road United Methodist Church.
+    Client: That sounds good to me. I want to buy one ticket for the event.
+    Agent: Please confirm the following details. The event is Atlanta Summer Organ Festival in Atlanta and you want 1 ticket for the day after tomorrow?
+    Client: No. I want four tickets.
+  question: Extract the values of the slots from the conversation.
+- answer: |
+    {'number_of_beds':['2'], 'number_of_baths':['1'], 'area':['San Jose']}
+  context: |
+    Slot library (slot id followed by description):
+    number_of_beds: Number of bed rooms. Allowed values - "1", "2", "3", "4".
+    furnished: Boolean flag indicating if the property is furnished. Allowed values - "True", "False".
+    number_of_baths: number of baths in the apartment. Allowed values - "1", "2", "3", "4".
+    area: City where the apartment is located.
+    pets_allowed: Boolean flag indicating if pets are allowed. Allowed values - "True", "False".
+
+    Conversation:
+    Client: I want to find a one bath apartment.
+    Agent: How many bedrooms, and which area do you want the property to be in?
+    Client: I want a two bedroom apartment in San Jose
+  question: Extract the values of the slots from the conversation.
+- answer: |
+    {'destination':['London'], star_rating:['5'], 'number_of_rooms':['1']}
+  context: |
+    Slot library (slot id followed by description):
+    destination: Location of the hotel.
+    star_rating: Star rating of the hotel. Allowed values - "1", "2", "3", "4", "5".
+    has_wifi: boolean flag indicating if the hotel has wifi. Allowed values - "True", "False".
+    number_of_rooms: number of rooms in the reservation. Allowed values - "1", "2", "3".
+
+    Conversation:
+    Client: I am tired. Can you find me a hotel.
+    Agent: Which city shall I search in?
+    Client: London please. And I just want one room.
+    Agent: I found a five star hotel, 45 Park Lane.
+    Client: Sounds great!
+  question: Extract the values of the slots from the conversation.
+
+
+task_description: 'Slot filling - categorical slots - numberical match'

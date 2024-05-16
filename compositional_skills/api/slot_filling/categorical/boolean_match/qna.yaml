@@ -1,0 +1,60 @@
+created_by: Sumit_Neelam
+seed_examples:
+- answer: |
+    {'genre':['Fantasy'], 'title':['Penguin Highway'], 'subtitles':['True']}
+  context: |
+    Slot library (slot id followed by description):
+    genre: Genre of the movie.
+    directed_by: Name of the director of the movie.
+    title: Title of the movie.
+    subtitles: Boolean flag indicating if subtitles are desired for this movie. Allowed values - "True", "False".
+
+    Conversation:
+    Client: Can you help me find some movies to watch online?
+    Agent: What kind of genre are you interested in watching?
+    Client: I enjoy watching Rom-com movies.
+    Agent: Have you watched After, Pillow Talk, or Say Anything? You might enjoy these.
+    Client: Do you have any more suggestions? I also like Fantasy movies.
+    Agent: Here are 4 movies you might enjoy: Dumbo, Hellboy, Mad Max: Fury Road
+    Client: Do you have any more suggestions?
+    Agent: You might enjoy Penguin Highway.
+    Client: I enjoyed watching Penguin Highway.
+    Agent: Did you want to watch Penguin Highway?
+    Client: Yes, I'd would like to watch it.
+    Agent: Would you like to watch Penguin Highway without subtitles?
+    Client: I would like to watch it with subtitles please.
+  question: Extract the values of the slots from the conversation.
+- answer: |
+    {'shared_ride':['True'], 'destination':['Chilpancingo Vista Apartments'], 'number_of_riders':['1']}
+  context: |
+    Slot library (slot id followed by description):
+    shared_ride: Boolean flag whether ride is shared with other passengers. Allowed values - "True", "False".
+    destination: destination for taxi ride.
+    number_of_riders: number of riders to call taxi for. Allowed values - "1", "2", "3", "4".
+
+    Conversation:
+    Client: I'm going out with a friend. Can you help me get a cab?
+    Agent: Where do you need to go and how many people will be riding in the cab? Are you okay with a shared ride?
+    Client: I'm going to 200 Greenbriar Circle and the cab is for two people. I'm fine with sharing a ride.
+    Agent: Please confirm the details for the ride: You want a cab for 2 people to go to 200 Greenbriar Circle and you're okay with a shared ride.
+    Client: No, it's only for 1 person and I need to go to Chilpancingo Vista Apartments.
+  question: Extract the values of the slots from the conversation.
+- answer: |
+    {'offers_cosmetic_services':['True'], 'city':['Santa Rosa']}
+  context: |
+    Slot library (slot id followed by description):
+    offers_cosmetic_services: Boolean flag indicating if the dentist offers cosmetic services. Allowed values - "True", "False".
+    city: City where the dentist is located.
+
+    Conversation:
+    Client: Are there any dentists in Sunnyvale, because I really need to find one!
+    Agent: There are at least 10 dentists in Sunnyvale; what about Amazing Smile Dental?
+    Client: No, I need a cosmetic dentist closer to Santa Rosa.
+    Agent: The dental practice of Daniel Sullivan is in Santa Rosa.
+    Client: I will prefer a different dentist.
+    Agent: There is the office of Krystle Lim, also in Santa Rosa.
+    Client: Do you have the phone number for their office?
+  question: Extract the values of the slots from the conversation.
+
+
+task_description: 'Slot filling - categorical slots - boolean match'

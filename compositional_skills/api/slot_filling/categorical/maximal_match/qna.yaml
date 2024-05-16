@@ -1,0 +1,32 @@
+created_by: Sumit_Neelam
+seed_examples:
+- answer: |
+    {'city':['Mountain View'], 'type':['Dermatologist or General Practitioner']}
+  context: |
+    Slot library (slot id followed by description):
+    city: cities where the doctor is located.
+    type: Speciality of the doctor. Allowed values - "Ophthalmologist", "Dermatologist", "Gynecologist", "General Practitioner", "ENT Specialist", "Dermatologist or General Practitioner".
+
+    Conversation:
+    Client: I need a doctor because I am sick. I need an Dermatologist or General Practitioner. Can you find someone in Mountain View.
+  question: Extract the values of the slots from the conversation.
+- answer: |
+    {'fare_type':['economy price or economy extra price'], 'departure_date':['July 1st'], 'destination':['Anaheim'], 'origin':['LAX']}
+  context: |
+    Slot library (slot id followed by description):
+    fare_type: Type of fare for the booking. Allowed values - "Flexible price", "economy price", "economy extra price", "economy price or economy extra price".
+    departure_date: Date of bus departure.
+    destination: Destination city for journey.
+    star_rating: star rating of the hotel. Allowed values - "1", "2", "3", "4", "5".
+    number_of_rooms: number of rooms in the reservation. Allowed values - "1", "2", "3".
+    origin: Origin city for journey.
+    hotel_destination: Locations of the hotel.
+    has_wifi: boolean flag indicating if the hotel has wifi. Allowed values - "True", "False".
+    group_size: Size of group for the booking. Allowed values - "1", "2", "3", "4", "5".
+    Conversation:
+    Client: I want to travel to Anaheim on July 1st, so can you help me to search for Economy, Economy extra bus ticket deals?
+    Agent: Where are you departing from?
+    Client: I'll go from LAX.
+  question: Extract the values of the slots from the conversation.
+
+task_description: 'Slot filling - categorical slots - maximal match'

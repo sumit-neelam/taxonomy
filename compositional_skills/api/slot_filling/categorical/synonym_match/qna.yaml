@@ -1,0 +1,52 @@
+created_by: Sumit_Neelam
+seed_examples:
+- answer: |
+    {'price_range':['moderate'], 'city':['Dublin'], 'cuisine':['Chinese'],}
+  context: |
+    Slot library (slot id followed by description):
+    price_range: Price range for the restaurant. Allowed values - "inexpensive", "moderate", "expensive", "very expensive".
+    date: date for the reservation or to find availability.
+    restaurant_name: Name of the restaurant.
+    city: city in which the restaurant is located.
+    time: Time for the reservation or to find availability.
+    cuisine: Cuisine of food served in the restaurant.
+
+    Conversation:
+    Client: Can you find me somewhere to eat in Dublin?
+    Agent: Do you have a preference for the type of food?
+    Client: Chinese food and not very costly, please.
+  question: Extract the values of the slots from the conversation.
+- answer: |
+    {'event_type':['Music'], 'city':['LAX']}
+  context: |
+    Slot library (slot id followed by description):
+    date: Date of event.
+    event_type: Type of event. Allowed values - "Music", "Sports".
+    category: the sport or music subcategory.
+    city: City where the event is taking place.
+
+    Conversation:
+    Client: Excuse me! Hello! do you have time to search a good event for me?
+    Agent: What time of events do you prefer like Music, Sports, Cinema etc. Where you wish to have the event happening?
+    Client: If Concert events are there, it would be good and am looking for events in LAX.
+  question: Extract the values of the slots from the conversation.
+- answer: |
+    {'location':['Vancouver, BC'], 'good_for_kids':['True'], 'category':['Park']}
+  context: |
+    Slot library (slot id followed by description):
+    event_date: date of event or for checking availability.
+    free_entry: Boolean flag indicating whether entrance to attraction is free. Allowed values - "True", "False".
+    number_of_seats: number of seats to reserve in the cab. Allowed values - "1", "2", "3", "4".
+    ride_type: Type of cab ride. Allowed values - "Pool", "Regular", "Luxury".
+    location: city or town where the attraction is located.
+    good_for_kids: boolean flag indicating whether attraction is good for to take kids to. Allowed values - "True", "False".
+    category: Category to which the attraction belongs. Allowed values - "Place of Worship", "Theme Park", "Museum", "Historical Landmark", "Park", "Tourist Attraction", "Sports Venue", "Shopping Area", "Performing Arts Venue", "Nature Preserve".
+    destination: Destination address or location for cab.
+
+    Conversation:
+    Client: I will be meeting with some friends and we are looking for something to visit. Is there anything child-friendly around? Something like a garden.
+    Agent: Where do you want to look for?
+    Client: Look for something in Vancouver, BC.
+  question: Extract the values of the slots from the conversation.
+
+task_description: 'Slot filling - categorical slots - synonym match'

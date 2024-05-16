@@ -1,0 +1,58 @@
+created_by: Sumit_Neelam
+seed_examples:
+- answer: |
+    {'airlines':['Delta Airlines'], 'departure_date':['the 12th']}
+  context: |
+    Slot library (slot id followed by description):
+    destination_city: Ending city for the trip.
+    seating_class: seating class for the booking. Allowed values - "Economy", "Premium Economy", "Business", "First Class".
+    refundable: Whether the booking is refundable or not. Allowed values - "True", "False".
+    origin_city: Starting city for the trip.
+    airlines: name of airline. Allowed values - "United Airlines", "American Airlines", "Delta Airlines", "Southwest Airlines", "Alaska Airlines", "British Airways", "Air Canada", "Air France".
+    departure_date: start date for the trip.
+    passengers: number of passengers in the booking. Allowed values - "1", "2", "3", "4".
+
+    Conversation:
+    Client: I'm taking a trip soon and want a one way flight. Departure date is the 12th and would like to go on Delta Airlines.
+  question: Extract the values of the slots from the conversation.
+- answer: |
+    {'genre':['non-fiction'], 'movie_name':['JT LeRoy'], 'show_type':['regular'], 'location':['San Francisco'], 'theater_name':['Roxie Theater']}
+  context: |
+    Slot library (slot id followed by description):
+    genre: genre of the movie.
+    movie_name: name of the movie.
+    show_type: Type of show. Allowed values - "regular", "3d", "imax".
+    show_date: date of the show.
+    location: City where the theatre is located.
+    theater_name: name of the theatre.
+
+    Conversation:
+    Client: Please find me a non-fiction movie at the Roxie Theater.
+    Agent: In what location?
+    Client: Please search in the San Francisco area.
+    Agent: There is 1 movie in the area called JT LeRoy. Are you interested?
+    Client: JT LeRoy works for me.
+    Agent: Do you wish to pre-purchase your tickets?
+    Client: No. That's ok. I'm interested in the time for a regular show.
+  question: Extract the values of the slots from the conversation.
+- answer: |
+    {'origin_city':['SFO'], 'passengers':['4'], 'seating_class':['Economy'], 'destination_city':['LA'], 'departure_date':['14th of this month']}
+  context: |
+    Slot library (slot id followed by description):
+    origin_city: starting city for the trip.
+    passengers: Number of passengers in the booking. Allowed values - "1", "2", "3", "4".
+    refundable: Whether the booking is refundable or not. Allowed values - "True", "False".
+    seating_class: Seating class for the booking. Allowed values - "Economy", "Premium Economy", "Business", "First Class".
+    destination_city: ending city for the trip.
+    airlines: Name of airline. Allowed values - "United Airlines", "American Airlines", "Delta Airlines", "Southwest Airlines", "Alaska Airlines", "British Airways", "Air Canada", "Air France".
+    departure_date: Start date for the trip.
+
+    Conversation:
+    Client: I need to go on a trip soon. Please find me oneway flights for that.
+    Agent: From where do you want to leave? When do you want to leave? What is your destination?
+    Client: My journey should start at SFO and I want to leave on the 14th of this month. I want to travel to LA.
+    Agent: There are 4 flights you might find acceptable. You could take an Alaska Airlines flight that will leave at 7:10 pm and has 0 stops. The ticket costs $103.
+    Client: Are there other flight options? I am travelling in a group of four and I prefer traveling in Economy class.
+  question: Extract the values of the slots from the conversation.
+
+task_description: 'Slot filling - categorical slots - exact match'

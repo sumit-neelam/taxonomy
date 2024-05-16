@@ -1,0 +1,48 @@
+created_by: Sumit_Neelam
+seed_examples:
+- answer: |
+    {'party_size':['3'], 'date':['the 12th'], 'restaurant_name':['Sushi Nara'], 'price_range':['moderate'], 'time':['afternoon 12:30'], 'cuisine':['ramen'], 'city':['Morgan Hill']}
+  context: |
+    Slot library (slot id followed by description):
+    party_size: party size for a reservation. Allowed values - "1", "2", "3", "4", "5", "6".
+    serves_alcohol: Boolean flag indicating if the restaurant serves alcohol. Allowed values - "True", "False".
+    date: date for the reservation or to find availability.
+    restaurant_name: name of the restaurant.
+    price_range: Price range for the restaurant. Allowed values - "inexpensive", "moderate", "expensive", "very expensive".
+    serves_alcohol: Boolean flag indicating if the restaurant has live music. Allowed values - "True", "False".
+    time: time for the reservation or to find availability.
+    cuisine: Cuisine of food served in the restaurant.
+    city: City in which the restaurant is located.
+
+    Conversation:
+    Client: I need somewhere to get a bite to eat, can you hook me up?
+    Agent: Sure, where are we looking? What kind of food do you like?
+    Client: I want some ramen, I'm really craving it. Can you find me an afforadable place in Morgan Hill?
+    Agent: Hanami Sushi does ramen in Morgan Hill. Is that okay?
+    Client: Nah, I'd rather somewhere else. Do you have another one?
+    Agent: Sushi Nara is another place that does ramen in Morgan Hill.
+    Client: Yeah, that'll be good for me.
+    Agent: Great, do you want a table?
+    Client: Yes, please book a table for two.
+    Agent: What time would you like to eat?
+    Client: I'd like the table for afternoon 12:30 thanks.
+    Agent: Please confirm that you'd like to book a table for 2 at Sushi Nara in Morgan Hill from 12:30 pm today.
+    Client: No actually, I want it for me, my brother and my sister on the 12th instead.
+  question: Extract the values of the slots from the conversation.
+- answer: |
+    {'garment_name':['Shirt'], 'brand':['Lacoste'], 'size':['38']}
+  context: |
+    Slot library (slot id followed by description):
+    garment_name: Name of garment
+    brand: Name of brand
+    size: Size of garment. Allowed values - "38", "40", "42", "44", "46"
+
+    Conversation:
+    Client: I want to buy a nice Shirt
+    Agent: Sure, Can you help me by telling brand name ?
+    Client: I find Lacoste good. 
+    Agent: Okay, which size would you prefer ?
+    Client: I want smallest one.
+  question: Extract the values of the slots from the conversation.
+
+task_description: 'Slot filling - categorical slots - logical numerical match'

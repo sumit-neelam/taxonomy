@@ -1,0 +1,19 @@
+created_by: Sumit_Neelam
+seed_examples:
+- answer: |
+    {'continent_name':['South America'], 'tour_period':['15'], 'number_of_people':['5']}
+  context: |
+    Slot library (slot id followed by description):
+    continent_name: Name of continent for tour. Allowed values - "Africa", "Asia", "Europe", "North America", "South America", "Australia"
+    tour_period: Tour period
+    number_of_people: number of people for a reservation. Allowed values - "1", "2", "3", "4", "5", "6".
+
+    Conversation:
+    [USER] We are group of five people and we are looking for option for vacation tour
+    [SYSTEM] Fine, where do you want to visit ?
+    [USER] We want to cover Brazil, Argentina etc. 
+    [SYSTEM] How long would you like to travel ?
+    [USER] Try to find tour of 15 days.
+  question: Extract the values of the slots from the conversation.
+
+task_description: 'Slot filling - categorical slots - logical geographical match'

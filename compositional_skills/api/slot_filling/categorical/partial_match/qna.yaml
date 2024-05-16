@@ -1,0 +1,56 @@
+created_by: Sumit_Neelam
+seed_examples:
+- answer: |
+    {'album':['Voicenotes'], 'artist':['Charlie Puth'], 'playback_device':['kitchen speaker'], 'song_name':['The Way I am']}
+  context: |
+    Slot library (slot name followed by description):
+    album: Album the song belongs to.
+    artist: Name of the artist the song is performed by.
+    genre: genre of the song.
+    playback_device: Playback device on which the song is to be played. Allowed values - "TV", "kitchen speaker", "bedroom speaker".
+    song_name: Name of the song.
+
+    Conversation:
+    Client: Could you look for some songs for me?
+    Agent: How about the album Voicenotes with song The Way I am by Charlie Puth?
+    Client: Perfect. I want to listen to the song, so play it in kitchen.
+  question: From a given slot library of any domain and the conversation around it, generate the slot value pairs that can be extracted from the conversation in json format. If a slot has set of allowed values then the slot can only take one of those values, which can be partially revealed in the conversation.
+- answer: |
+    {'recipient_account_name':['Abhinav'], 'account_type':['savings account'], 'amount':['1650 dollars']}
+  context: |
+    Slot library (slot name followed by description):
+    recipient_account_name: The account name of the recipient who is to receive the transfered money.
+    recipient_account_type: The account type of the recipient whom the user is transfering money to. Allowed values - "checking account", "savings account".
+    account_type: The account type of the user. Allowed values - "checking account", "savings account".
+    amount: the amount of money to transfer.
+
+    Conversation:
+    Client: Could you help to make a transfer of 1650 dollars.
+    Agent: Who would you like to send the money to and from which account?
+    Client: Could you send the money to Abhinav, from my Savings acct.
+  question: From a given slot library of any domain and the conversation around it, generate the slot value pairs that can be extracted from the conversation in json format. If a slot has set of allowed values then the slot can only take one of those values, which can be partially revealed in the conversation.
+- answer: |
+    {'location':['Anaheim'], 'city':['Anaheim'], 'date':['September 1st'], 'category':['Sports Venue style']}
+  context: |
+    Slot library (slot name followed by description):
+    good_for_kids: Boolean flag indicating whether attraction is good for to take kids to. Allowed values - "True", "False".
+    destination: destination for taxi ride.
+    location: Cities or towns where the attraction is located.
+    city: name of the city for the weather.
+    date: date for the weather.
+    number_of_riders: number of riders to call taxi for. Allowed values - "1", "2", "3", "4".
+    category: category to which the attraction belongs. Allowed values - "performing arts venue style", "Museum style", "Sports Venue style", "Nature Preserve style", "Historical Landmark style", "Theme Park style", "Place of Worship style", "park style", "tourist attraction style", "shopping area style", "Place of Worship style or park style".
+    shared_ride: boolean flag whether ride is shared with other passengers. Allowed values - "True", "False".
+    free_entry: boolean flag indicating whether entrance to attraction is free. Allowed values - "True", "False".
+
+    Conversation:
+    Client: I want to have some good time, so can you tell me about some attractions which I can visit?
+    Agent: Is there a specific place where you want to look for?
+    Client: I am looking for attractions in Anaheim.
+    Agent: You might enjoy the Angel Stadium of Anaheim, which is a Sports Venue.
+    Client: Alright, nice. Can you tell me how the weather is there on September 1st?
+    Agent: From what I can see the average temperature for the day should be 78 degrees Fahrenheit, though there is a 29 percent chance of rain.
+    Client: Tell me how the wind is going to be, and what level of humidity should I expect?
+  question: From a given slot library of any domain and the conversation around it, generate the slot value pairs that can be extracted from the conversation in json format. If a slot has set of allowed values then the slot can only take one of those values, which can be partially revealed in the conversation.
+
+task_description: 'Slot filling - categorical slots - partial match'
